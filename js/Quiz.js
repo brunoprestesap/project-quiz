@@ -61,20 +61,16 @@ class Quiz {
   };
 
   //funcao para obter uma nova questao
-  getNewQuestion = () => {
-    console.log(questionCounter);
-    //obtem uma questao com base na variavel contadora de questoes
-    currentQuestion = availableQuestions[questionCounter];
-    console.log(currentQuestion);
-    //incrementa o contador de questoes
-    questionCounter += 1;
+  getNewQuestion = () => {   
     if(questionCounter < 9) {
+        currentQuestion = availableQuestions[questionCounter];
+        console.log(questionCounter, currentQuestion.question);
+        questionCounter += 1;
         return currentQuestion;
     } else {
+        questionCounter += 1;
         return "FIM";
     }
-
-    
   };
 }
 

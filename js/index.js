@@ -23,11 +23,10 @@ question.innerText = cq.question;
 example.innerText = cq.example;
 
 btnAvancar.addEventListener("click", () => {
-    console.log("cq");
+    cq = game.getNewQuestion();
   if (cq === "FIM") {
     window.location.replace("result.html");
-  } else {
-    cq = game.getNewQuestion();
+  } else {    
     question.innerText = cq.question;
     example.innerText = cq.example;
   }
