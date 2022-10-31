@@ -1,0 +1,19 @@
+1. Com que frequencia voce comete erros por desatenção em um projeto que é chato ou dificil?
+2. Com que frequencia voce tem dificuldade para se concentrar em trabalhos chatos e repetitivos?
+3. Com que frequencia voce tem dificuldades para se concentrar no que as pessoas dizem?
+Mesmo quando estão falando diretamente com voce
+4. Com que frequencia voce deixa projetos pela metade depois de ter feito as partes mais dificeis/desafiadoras?
+5. Com que frequencia voce tem dificuldade para fazer um trabalho que precisa de organização?
+6. Com que frequencia voce procrastina pra fazer um trabalho que exige concentração?
+7. Com que freq. voce deixa as coisas/objetos fora do lugar ou dificl para achar?
+8. Com que freq. voce se distrai com atividades ou  barulho a sua volta?
+9. Com que freq. voce tem dificuldade para lembrar compromissos ou obrigações?
+
+frequencias
+Nunca
+Quase Nunca
+As vezes
+Quase sempre
+sempre
+
+4 ou mais quase sempre ou sempre - Sugerem um tdah
