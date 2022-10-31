@@ -18,16 +18,22 @@ const btnAvancar = document.getElementById("btn-next");
 //inicia quiz
 game.startQuiz();
 
+//obtem a primeira pergunta
 let cq = game.getNewQuestion();
+
+//exibe a primeira pergunta ao carregar a pagina game.html
 question.innerText = cq.question;
 example.innerText = cq.example;
 
+// evento onclick do botacao avancar
 btnAvancar.addEventListener("click", () => {
+    //obtem uma nova pergunta
     cq = game.getNewQuestion();
-  if (cq === "FIM") {
-    window.location.replace("result.html");
-  } else {    
-    question.innerText = cq.question;
-    example.innerText = cq.example;
+    // se a funcao getNewQuestion retornar a string FIM redireciona para a pagina result.html, caso contrario exibe a nova pergunta
+    if (cq === "FIM") {
+        window.location.replace("result.html");
+    } else {
+        question.innerText = cq.question;
+        example.innerText = cq.example;
   }
 });

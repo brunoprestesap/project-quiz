@@ -56,19 +56,19 @@ class Quiz {
     //copia a array do construtor da class Quiz
     //com as questoes disponiveis para a variavel availableQuestions
     availableQuestions = [...this.questions];
-    // obtem uma nova questao
-    // this.getNewQuestion();
   };
 
   //funcao para obter uma nova questao
   getNewQuestion = () => {   
     if(questionCounter < 9) {
+        //obtem a questao atual
         currentQuestion = availableQuestions[questionCounter];
-        console.log(questionCounter, currentQuestion.question);
+        //incrementa o contador
         questionCounter += 1;
+        //retorna questao atual
         return currentQuestion;
     } else {
-        questionCounter += 1;
+        //retorna a string FIM
         return "FIM";
     }
   };
