@@ -46,9 +46,9 @@ btnAvancar.addEventListener("click", () => {
       divBtnNext.classList.add("hide");
 
       if(game.getResult()){
-        pResultado.innerHTML = "Aprovado"
+        pResultado.innerHTML = "Pela avaliação das suas respostas, há chances de que você tenha défict de atenção (TDA). Procure um profissional para a realização do diagnóstico"
       } else {
-        pResultado.innerHTML = "Reprovado"
+        pResultado.innerHTML = "Pela avaliação das suas respostas, não há indicação de que você tenha défict de atenção (TDA)."
       }
     }
     
