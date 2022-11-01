@@ -82,6 +82,10 @@ h3 {
     text-align: center;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 .hidden {
     display: none;
 }
