@@ -32,7 +32,15 @@
     color: #393E46;
 }
 
-.alert {
+#alert {
     font-size: 1.5rem;
     align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
 }

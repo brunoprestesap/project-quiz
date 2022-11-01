@@ -60,25 +60,36 @@ class Quiz {
 
   //funcao para obter uma nova questao
   getNewQuestion = () => {   
-    if(questionCounter < 9) {
+    
+    if(questionCounter <= 8) {
         //obtem a questao atual
         currentQuestion = availableQuestions[questionCounter];
         //incrementa o contador
-        questionCounter += 1;
-        //retorna questao atual
+        questionCounter++;
         return currentQuestion;
     } else {
         //retorna a string FIM
         return "FIM";
     }
+
+    
   };
+
+  getResult = () => {
+    const filterItems = this.replys.filter(e => e == "Sempre" || e == "Quase Sempre")
+    if (filterItems.length >= 6) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
-//armazena a questão atual
-let currentQuestion = {};
-//aceitando resposta
-let acceptingAnswers = true;
-//contador de questões
-let questionCounter = 0;
-//array de questoes disponiveis
-let availableQuestions = [];
+  //armazena a questão atual
+  let currentQuestion = {};
+  //aceitando resposta
+  let acceptingAnswers = true;
+  //contador de questões
+  let questionCounter = 0;
+  //array de questoes disponiveis
+  let availableQuestions = [];
