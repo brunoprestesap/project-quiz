@@ -38,7 +38,7 @@ class Quiz {
         example:"Exemplo: materias escolares, lapis, livros, instrumetos, carteira, chaves, documentos, óculos, celular"
       },
       {
-        question: "Você é facilmente distraído por estímulos externos, ou mesmo pensamentos não relacionaddos?",
+        question: "Você é facilmente distraído por estímulos externos, ou mesmo pensamentos não relacionados?",
         example: ""
       },
       {
