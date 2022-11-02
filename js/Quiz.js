@@ -55,7 +55,7 @@ class Quiz {
     this.questionsHiper = [
       {
         question:
-          "Com qual frequência você remexe ou batuca as mãos ou os pés ou se contorce na cadeira.",
+          "Com qual frequência você remexe ou batuca as mãos ou os pés ou se contorce na cadeira?",
         example: "",
       },
       {
@@ -77,7 +77,7 @@ class Quiz {
       },
       {
         question:
-          "Com frequência `não para`, agindo como se estivesse `com o motor ligado`?",
+          "Com frequência 'não para', agindo como se estivesse 'com o motor ligado'?",
         example:
           "Exemplo: não consegue ou se sente desconfortável em ficar parado por muito tempo, como em restaurantes, reuniões; outros podem ver o indivíduo como inquieto ou difícil de acompanhar",
       },
