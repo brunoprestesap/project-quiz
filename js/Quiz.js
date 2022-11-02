@@ -23,7 +23,7 @@ class Quiz {
         question:
           "Você não segue orientações até o fim e não consegue terminar trabalhos escolares, tarefas ou deveres no local de trabalho?",
         example:
-          "Exemplo: Começa as tarefas, mas rapidaente perde o foco e facilmente perde o rumo",
+          "Exemplo: Começa as tarefas, mas rapidamente perde o foco e facilmente perde o humor",
       },
       {
         question: "Você tem dificuldade em organizar tarefas e atividades?",
