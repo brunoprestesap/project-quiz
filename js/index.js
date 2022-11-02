@@ -16,15 +16,15 @@ const home = document.getElementById("home");
 const btnDesatencao = document.getElementById("btnDesatencao");
 const btnHiperatividade = document.getElementById("btnHiperatividade");
 const btnSobre = document.getElementById("btnSobre");
-const btnVoltar = document.getElementById("btnVoltar");
+const btnVoltar = document.getElementById("divBtnVoltar");
 const information = document.getElementById("information");
+const btnRepetir = document.getElementById("btn-novo");
 
 let newQuestion = {};
 
 function iniciarQuiz(){
   home.classList.add("hidden");
   divGame.classList.remove("hidden");
-  divGame.classList.add("show");
   divBtnNext.classList.remove("hidden");
 };
 
@@ -73,7 +73,6 @@ btnAvancar.addEventListener("click", () => {
 
     if(newQuestion == "FIM"){
       divResultado.classList.remove("hidden");
-      divResultado.classList.add("show");
       
       divGame.classList.remove("show");
       divGame.classList.add("hidden");
@@ -81,9 +80,9 @@ btnAvancar.addEventListener("click", () => {
       divBtnNext.classList.add("hidden");
 
       if(game.getResult()){
-        pResultado.innerHTML = "Pela avaliação das suas respostas, há chances de que você tenha défict de atenção (TDA). Procure um profissional para a realização do diagnóstico"
+        pResultado.innerHTML = "Pela avaliação das suas respostas, você manifesta características que indicam a necessidade de acompanhamento profissional";
       } else {
-        pResultado.innerHTML = "Pela avaliação das suas respostas, não há indicação de que você tenha défict de atenção (TDA)."
+        pResultado.innerHTML = "Pela avaliação das suas respostas, NÃO há indicação imediata da necessidade de acompanhamento médico profissional.";
       }
     }
     
@@ -111,4 +110,15 @@ btnSobre.addEventListener("click", () => {
   home.classList.add("hidden");
   information.classList.remove("hidden");
   btnVoltar.classList.remove("hidden");
+});
+
+btnVoltar.addEventListener("click", () => {
+  home.classList.remove("hidden");
+  information.classList.add("hidden");
+  btnVoltar.classList.add("hidden");
+});
+
+btnRepetir.addEventListener("click", () => {
+  home.classList.remove("hidden");
+  divResultado.classList.add("hidden");
 });
