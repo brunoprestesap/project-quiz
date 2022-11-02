@@ -22,39 +22,33 @@ const btnRepetir = document.getElementById("btn-novo");
 
 let newQuestion = {};
 
-function iniciarQuiz(){
+function iniciarQuiz() {
   home.classList.add("hidden");
   divGame.classList.remove("hidden");
   divBtnNext.classList.remove("hidden");
-};
+}
 
-function exibePergunta(questao, exemplo){
-
-  if(questao != undefined){
+function exibePergunta(questao, exemplo) {
+  if (questao != undefined) {
     question.innerText = questao;
     ex.innerText = exemplo;
   }
-
-};
+}
 
 btnDesatencao.addEventListener("click", () => {
-  
   //Inicia o quiz e exibe a primeira pergunta no html
   game.startQuiz("tda");
   newQuestion = game.getNewQuestion();
   iniciarQuiz();
   exibePergunta(newQuestion.question, newQuestion.example);
-  
 });
 
 btnHiperatividade.addEventListener("click", () => {
-
   //Inicia o quiz e exibe a primeira pergunta no html
   game.startQuiz("tdah");
   newQuestion = game.getNewQuestion();
   iniciarQuiz();
   exibePergunta(newQuestion.question, newQuestion.example);
-
 });
 
 // evento onclick do botao avancar
@@ -65,26 +59,27 @@ btnAvancar.addEventListener("click", () => {
 
     newQuestion = game.getNewQuestion();
 
-    if(newQuestion != undefined) {
+    if (newQuestion != undefined) {
       exibePergunta(newQuestion.question, newQuestion.example);
       alert.innerHTML = "";
-    }
+    };
 
-    if(newQuestion == "FIM"){
+    if (newQuestion == "FIM") {
       divResultado.classList.remove("hidden");
       divGame.classList.add("hidden");
       divBtnNext.classList.add("hidden");
 
-      if(game.getResult()){
-        pResultado.innerHTML = "Pela avaliação das suas respostas, você manifesta características que indicam a necessidade de acompanhamento profissional";
+      if (game.getResult()) {
+        pResultado.innerHTML =
+          "Pela avaliação das suas respostas, você manifesta características que indicam a necessidade de acompanhamento profissional";
       } else {
-        pResultado.innerHTML = "Pela avaliação das suas respostas, NÃO há indicação imediata da necessidade de acompanhamento médico profissional.";
-      }
+        pResultado.innerHTML =
+          "Pela avaliação das suas respostas, NÃO há indicação imediata da necessidade de acompanhamento médico profissional.";
+      };
     }
-    
   } else {
     alert.innerHTML = "Você precisa selecionar uma resposta";
-  }
+  };
 });
 
 // percorre todos as respostas a fim de verificar a reposta selecionada
