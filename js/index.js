@@ -64,7 +64,6 @@ btnAvancar.addEventListener("click", () => {
     choiceClicked[0].classList.remove("choice-clicked");
 
     newQuestion = game.getNewQuestion();
-    console.log(newQuestion);
 
     if(newQuestion != undefined) {
       exibePergunta(newQuestion.question, newQuestion.example);
@@ -73,10 +72,7 @@ btnAvancar.addEventListener("click", () => {
 
     if(newQuestion == "FIM"){
       divResultado.classList.remove("hidden");
-      
-      divGame.classList.remove("show");
       divGame.classList.add("hidden");
-      divBtnNext.classList.remove("show")
       divBtnNext.classList.add("hidden");
 
       if(game.getResult()){
