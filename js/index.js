@@ -3,7 +3,7 @@ const game = new Quiz();
 
 //obtendo elementos da página game
 const question = document.getElementById("question");
-const example = document.getElementById("example");
+const ex = document.getElementById("example");
 const choices = Array.from(document.getElementsByClassName("choice-container"));
 const btnAvancar = document.getElementById("btn-next");
 const alert = document.getElementById("alert");
@@ -12,38 +12,73 @@ const divResultado = document.getElementById("resultado");
 const divGame = document.getElementById("game");
 const divBtnNext = document.getElementById("btnNext");
 const pResultado = document.getElementById("p-resultado");
+const home = document.getElementById("home");
+const btnDesatencao = document.getElementById("btnDesatencao");
+const btnHiperatividade = document.getElementById("btnHiperatividade");
+const btnSobre = document.getElementById("btnSobre");
+const btnVoltar = document.getElementById("btnVoltar");
+const information = document.getElementById("information");
 
+let newQuestion = {};
 
-//Inicia o quiz e exibe a primeira pergunta no html
-  game.startQuiz();
-  let cq = game.getNewQuestion();
-  if(cq.question != undefined){
-    question.innerHTML = cq.question;
-    example.innerHTML = cq.example;
-    console.log(cq.question);
+function iniciarQuiz(){
+  home.classList.add("hidden");
+  divGame.classList.remove("hidden");
+  divGame.classList.add("show");
+  divBtnNext.classList.remove("hidden");
+};
+
+function exibePergunta(questao, exemplo){
+
+  if(questao != undefined){
+    question.innerText = questao;
+    ex.innerText = exemplo;
   }
 
+};
+
+btnDesatencao.addEventListener("click", () => {
+  
+  //Inicia o quiz e exibe a primeira pergunta no html
+  game.startQuiz("tda");
+  newQuestion = game.getNewQuestion();
+  iniciarQuiz();
+  exibePergunta(newQuestion.question, newQuestion.example);
+  
+});
+
+btnHiperatividade.addEventListener("click", () => {
+
+  //Inicia o quiz e exibe a primeira pergunta no html
+  game.startQuiz("tdah");
+  newQuestion = game.getNewQuestion();
+  iniciarQuiz();
+  exibePergunta(newQuestion.question, newQuestion.example);
+
+});
 
 // evento onclick do botao avancar
 btnAvancar.addEventListener("click", () => {
   if (choiceClicked.length) {
     game.replys.push(choiceClicked[0].children[1].innerHTML);
-    console.log(game.replys);
     choiceClicked[0].classList.remove("choice-clicked");
 
-    let ncq = game.getNewQuestion();
-    console.log(ncq.question);
+    newQuestion = game.getNewQuestion();
+    console.log(newQuestion);
 
-    if(ncq.question != undefined){
-      question.innerText = ncq.question;
-      example.innerText = ncq.example;
+    if(newQuestion != undefined) {
+      exibePergunta(newQuestion.question, newQuestion.example);
       alert.innerHTML = "";
-    } else if(ncq == "FIM"){
-      divResultado.classList.remove("hide");
+    }
+
+    if(newQuestion == "FIM"){
+      divResultado.classList.remove("hidden");
       divResultado.classList.add("show");
       
-      divGame.classList.add("hide");
-      divBtnNext.classList.add("hide");
+      divGame.classList.remove("show");
+      divGame.classList.add("hidden");
+      divBtnNext.classList.remove("show")
+      divBtnNext.classList.add("hidden");
 
       if(game.getResult()){
         pResultado.innerHTML = "Pela avaliação das suas respostas, há chances de que você tenha défict de atenção (TDA). Procure um profissional para a realização do diagnóstico"
@@ -70,4 +105,10 @@ choices.forEach((e) => {
     //atribui a classe choice-clicked ao novo elemento marcado
     e.classList.add("choice-clicked");
   });
+});
+
+btnSobre.addEventListener("click", () => {
+  home.classList.add("hidden");
+  information.classList.remove("hidden");
+  btnVoltar.classList.remove("hidden");
 });
