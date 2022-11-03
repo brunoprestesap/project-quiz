@@ -109,9 +109,12 @@ h3 {
 /* BUTTONS */
 
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     font-size: 1.8rem;
     padding: 1rem 0;
-    width: 30rem;
+    width: 40rem;
     height: 5rem;
     text-align: center;
     border: 0.1rem solid #00ADB5;
@@ -119,6 +122,12 @@ h3 {
     text-decoration: none;
     color: #00ADB5;
     background-color: #222831;
+}
+
+.btn-ico {
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 15px;
 }
 
 .btn:hover {
