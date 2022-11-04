@@ -49,6 +49,10 @@ h3 {
 
 /* UTILITIES */
 
+#logo {
+    margin-bottom: 30px;
+}
+
 .container {
     width: 100vw;
     height: 85vh;

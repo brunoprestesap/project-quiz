@@ -97,6 +97,69 @@ choices.forEach((e) => {
   });
 });
 
+function draw() {
+  const canvas = document.getElementById("logo");
+  const ctx = canvas.getContext("2d");
+
+  // start the path
+  ctx.beginPath();
+  ctx.fillStyle = "#00ADB5";
+  ctx.strokeStyle = "#00ADB5";
+  ctx.lineWidth = 3.0;
+  ctx.lineCap = "round";
+  // starting position is x=50, y=50
+  ctx.moveTo(80, 5);
+  // draw the line that has final coordinates x=250, y=50
+  ctx.lineTo(155, 40);
+  // .stroke() executes the drawing
+  ctx.stroke();
+
+  // start a new line from these coordinates: x=250, y=50
+  ctx.moveTo(155, 40);
+  // draw the line that has final coordinates x=250, y=100
+  ctx.lineTo(155, 120);
+  // .stroke() executes the drawing
+  ctx.stroke();
+
+  // start a new line from these coordinates: x=250, y=50
+  ctx.moveTo(155, 120);
+  // draw the line that has final coordinates x=250, y=100
+  ctx.lineTo(80, 155);
+  // .stroke() executes the drawing
+  ctx.stroke();
+
+  // start a new line from these coordinates: x=250, y=50
+  ctx.moveTo(80, 155);
+  // draw the line that has final coordinates x=250, y=100
+  ctx.lineTo(5, 120);
+  // .stroke() executes the drawing
+  ctx.stroke();
+
+  // start a new line from these coordinates: x=250, y=50
+  ctx.moveTo(5, 120);
+  // draw the line that has final coordinates x=250, y=100
+  ctx.lineTo(5, 40);
+  // .stroke() executes the drawing
+  ctx.stroke();
+
+  // start a new line from these coordinates: x=250, y=50
+  ctx.moveTo(5, 40);
+  // draw the line that has final coordinates x=250, y=100
+  ctx.lineTo(80, 5);
+  // .stroke() executes the drawing
+  ctx.stroke();
+
+  // close the path
+  ctx.closePath();
+
+  ctx.fillStyle = "#00ADB5";
+  ctx.font = "bold 45px Arial";
+  ctx.fillText("IRON", 33, 75, 100);
+  ctx.fillText("HACK", 33, 115, 100);
+}
+
+draw();
+
 btnSobre.addEventListener("click", () => {
   home.classList.add("hidden");
   information.classList.remove("hidden");
